@@ -1,4 +1,5 @@
 "use strict";
+const data = require("./test_data.json");
 
 /**
  * The `test_data.json` contains an object array of "The Simpsons" characters and their catchphrase. This function
@@ -15,6 +16,13 @@ module.exports = function test1() {
 
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.
+
+  results = data.map((obj) => {
+    return {
+      ...obj,
+      example: `${obj.first_name} ${obj.last_name} says ${obj.catchphrase}`,
+    };
+  });
 
   return results;
 };
